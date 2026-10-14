@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101b20">
+  <title>Arkesia Atlas · Un mundo por escuchar</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="places.js" defer></script>
+  <script src="music.js" defer></script>
+  <script src="clouds.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header><a class="brand" href="./index.html"><span class="emblem" aria-hidden="true">✧</span> ARKESIA <span>ATLAS</span></a><span class="edition">EL COMIENZO DE UN VIAJE <i>01</i></span></header>
+  <main>
+    <section class="intro"><div><p class="eyebrow">EL MUNDO DE LOST ARK</p><h1>Un mundo por <em>escuchar.</em></h1><p class="description">Cada lugar guarda una historia. Cada historia, una canción.</p></div><div class="languages" aria-label="Idiomas previstos"><span>ES</span><span>EN</span><span>KR</span><small>UN FUTURO ATLAS MUSICAL</small></div></section>
+    <section class="atlas" aria-label="Mapa de Arkesia">
+      <div class="map-heading"><span><span class="dot"></span> ARKESIA / MAPA DEL MUNDO</span><span class="map-caption">EXPLORA EL HORIZONTE</span></div>
+      <div id="viewport" tabindex="0" aria-label="Mapa interactivo. Usa más y menos para ampliar, y las flechas para desplazarte."><img id="map" src="assets/Arkesia_map.PNG" alt="Mapa del mundo de Arkesia, con sus continentes e islas en los mares de Procyon y Gienah." draggable="false"></div>
+      <div class="map-footer"><span>Arrastra para explorar <b>·</b> Usa + y − para acercarte</span><div class="controls"><output id="zoom" aria-live="polite">100%</output><button id="out" aria-label="Alejar">−</button><button id="in" aria-label="Acercar">+</button><button id="native" title="Mostrar a resolución original: un píxel de imagen por píxel CSS">Tamaño original</button><button id="reset">Ajustar</button><a class="original" href="assets/Arkesia_map.PNG" target="_blank" rel="noopener">Abrir PNG ↗</a></div></div>
+    </section>
+    <footer><span><span class="dot"></span> PRIMER BOCETO · EL ATLAS ESTÁ TOMANDO FORMA</span><p>Continentes <span>→</span> Islas y lugares <span>→</span> Canciones <span class="future">/ próximamente</span></p></footer>
+  </main>
+  <dialog id="place-dialog" aria-labelledby="place-title" aria-describedby="place-description">
+    <button id="close-place" aria-label="Cerrar ficha">×</button>
+    <p class="eyebrow" id="place-region"></p>
+    <h2 id="place-title"></h2>
+    <p id="place-description">La banda sonora de este lugar empieza aquí.</p>
+    <div class="audio-languages" role="group" aria-label="Idioma de las canciones">
+      <button type="button" data-language="ES" aria-pressed="true">ES</button>
+      <button type="button" data-language="EN" aria-pressed="false">EN</button>
+      <button type="button" data-language="KR" aria-pressed="false">KR</button>
+    </div>
+    <div id="place-tracks" aria-label="Lista de canciones"></div>
+    <div class="music-player">
+      <p id="playing-title">Selecciona una canción</p>
+      <audio id="place-player" controls preload="none" hidden aria-label="Reproductor de la ciudad"></audio>
+    </div>
+    <p id="music-status" class="place-note" role="status"></p>
+  </dialog>
+</body>
+</html>
+
